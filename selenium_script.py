@@ -18,8 +18,11 @@ try:
     # Open the website
     driver.get("https://spowload.com/")
 
-    # Find the input field for the Spotify link
-    input_field = driver.find_element(By.NAME, "spotify_url")  # Adjust this based on the actual name attribute of the input field
+    # Debug: Print the page source to understand its structure
+    print(driver.page_source)
+
+    # Find the input field for the Spotify link using XPath (adjust the XPath based on the actual structure)
+    input_field = driver.find_element(By.XPATH, "//input[@placeholder='Enter Spotify URL']")  # Example placeholder attribute, adjust as needed
 
     # Paste the Spotify link (you can replace this with any Spotify link you want)
     spotify_link = "https://open.spotify.com/track/4cOdK2wGLETKBW3PvgPWqT?si=123456"
@@ -41,4 +44,3 @@ try:
 finally:
     # Close the WebDriver
     driver.quit()
-
